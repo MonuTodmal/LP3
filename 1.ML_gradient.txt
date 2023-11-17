@@ -1,0 +1,16 @@
+def g(s,gf,mi,lr):
+    s1=[s]
+    x=s1[-1]
+    for i in range(mi):
+        d=lr*gf(x)
+        x=x-d
+        s1.append(x)
+    return s1,x,lr
+
+def gd_f(x):
+    return 8*x
+
+list1,r,lr=g(3,gd_f,100,0.01)
+print(r)
+print(list1)
+print(lr)
